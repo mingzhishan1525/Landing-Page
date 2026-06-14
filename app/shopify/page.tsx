@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { growthLinks } from "../../lib/growth-links";
+import { growthLinks, withUtm } from "../../lib/growth-links";
 
 export const metadata = {
   title: "Shopify App | China Supply Radar",
@@ -75,7 +75,7 @@ export default function ShopifyPage() {
             holidays.
           </p>
           <a
-            href={growthLinks.shopifyInstallUrl}
+            href={withUtm(growthLinks.shopifyInstallUrl, "shopify")}
             className="mt-7 inline-flex min-h-12 items-center justify-center rounded-md bg-teal-600 px-6 py-3 text-base font-semibold text-white hover:bg-teal-700"
           >
             Install Shopify App

@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import NewsletterSignup from "./components/NewsletterSignup";
 import { isChromeStorePublished, siteConfig } from "./config";
+import { growthLinks, withUtm } from "../lib/growth-links";
 
 export const metadata: Metadata = {
   title: "China Supply Radar | Inventory Risk & Supply Chain Planning for Shopify",
@@ -262,7 +263,7 @@ export default function Home() {
               Shopify
             </Link>
             <a
-              href={siteConfig.shopifyAppUrl}
+              href={withUtm(growthLinks.shopifyInstallUrl, "website")}
               className="rounded-md bg-slate-950 px-4 py-2 text-white hover:bg-slate-800 dark:bg-teal-400 dark:text-slate-950 dark:hover:bg-teal-300"
             >
               Install Shopify App
@@ -289,7 +290,7 @@ export default function Home() {
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <a
-              href={siteConfig.shopifyAppUrl}
+              href={withUtm(growthLinks.shopifyInstallUrl, "website")}
               className="inline-flex min-h-12 items-center justify-center rounded-md bg-teal-600 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-teal-600/20 hover:bg-teal-700"
             >
               Install Shopify App
@@ -551,7 +552,7 @@ export default function Home() {
             Start with inventory risk visibility and China holiday impact.
           </p>
           <a
-            href={siteConfig.shopifyAppUrl}
+            href={withUtm(growthLinks.shopifyInstallUrl, "website")}
             className="mt-8 inline-flex min-h-12 items-center justify-center rounded-md bg-teal-500 px-6 py-3 text-base font-semibold text-slate-950 hover:bg-teal-400 dark:bg-slate-950 dark:text-white dark:hover:bg-slate-800"
           >
             Install Shopify App

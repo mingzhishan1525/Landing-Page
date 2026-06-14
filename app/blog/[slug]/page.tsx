@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getSeoArticle, seoArticles } from "../../../lib/data/blog-posts";
-import { growthLinks } from "../../../lib/growth-links";
+import { growthLinks, withUtm } from "../../../lib/growth-links";
 
 type BlogArticlePageProps = {
   params: Promise<{ slug: string }>;
@@ -31,6 +31,7 @@ export async function generateMetadata({
     openGraph: {
       title: article.metaTitle,
       description: article.metaDescription,
+      url: `/blog/${article.slug}`,
     },
   };
 }
@@ -106,13 +107,13 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
           </ul>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <a
-              href={growthLinks.chromeInstallUrl}
+              href={withUtm(growthLinks.chromeInstallUrl, "blog")}
               className="inline-flex min-h-12 items-center justify-center rounded-md bg-teal-600 px-5 py-3 font-semibold text-white hover:bg-teal-700"
             >
               Install Chrome Extension
             </a>
             <a
-              href={growthLinks.shopifyInstallUrl}
+              href={withUtm(growthLinks.shopifyInstallUrl, "blog")}
               className="inline-flex min-h-12 items-center justify-center rounded-md border border-slate-300 bg-white px-5 py-3 font-semibold text-slate-900 hover:border-slate-400 dark:border-slate-700 dark:bg-slate-950 dark:text-white"
             >
               Connect Shopify Store

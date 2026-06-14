@@ -25,7 +25,7 @@ export default function NewsletterSignup({ source }: NewsletterSignupProps) {
         body: JSON.stringify({ email, source }),
       });
       const data = (await response.json()) as { message?: string };
-      setMessage(data.message || "Thanks for subscribing.");
+      setMessage(data.message || "Subscription successful");
       if (response.ok) {
         setEmail("");
       }
@@ -56,7 +56,7 @@ export default function NewsletterSignup({ source }: NewsletterSignupProps) {
         disabled={isSubmitting}
         className="min-h-12 rounded-md bg-slate-950 px-6 py-3 text-base font-semibold text-white hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-70 dark:bg-teal-400 dark:text-slate-950 dark:hover:bg-teal-300"
       >
-        {isSubmitting ? "Joining..." : "Join Newsletter"}
+        {isSubmitting ? "Joining..." : "Get Weekly China Supply Report"}
       </button>
       {message ? (
         <p className="text-sm font-medium text-slate-600 dark:text-slate-300 sm:self-center">

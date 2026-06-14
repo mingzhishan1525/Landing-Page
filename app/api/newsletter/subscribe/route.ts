@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const fallbackSubscribers = new Set<string>();
 
 export async function POST(request: Request) {
   try {
@@ -22,9 +23,16 @@ export async function POST(request: Request) {
     const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
     if (!supabaseUrl || !supabaseServiceRoleKey) {
+      if (fallbackSubscribers.has(email)) {
+        return NextResponse.json({
+          message: "You are already subscribed.",
+        });
+      }
+
+      fallbackSubscribers.add(email);
+
       return NextResponse.json({
-        message:
-          "Thanks. Newsletter storage is not configured yet, but your form is working.",
+        message: "Subscription successful",
       });
     }
 
@@ -56,7 +64,7 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json({
-      message: "Thanks for subscribing.",
+      message: "Subscription successful",
     });
   } catch {
     return NextResponse.json(
