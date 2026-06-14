@@ -1,19 +1,19 @@
 import Link from "next/link";
+import { siteConfig } from "../config";
 
 const policyItems = [
-  "China Supply Radar does not collect personally identifiable information.",
-  "China Supply Radar does not require account registration or login.",
-  "China Supply Radar does not provide cloud sync.",
-  "China Supply Radar does not upload inventory data, supplier notes, order history, or settings to any server.",
-  "Inventory, supplier notes, order history, and settings are stored locally in chrome.storage.local.",
-  "China Supply Radar does not sell user data.",
-  "China Supply Radar does not use third-party advertising trackers.",
-  "Users can uninstall the extension to remove locally stored extension data from their browser.",
+  "We only access Shopify store data required to provide inventory planning, sales velocity calculations, reorder recommendations, and supply chain risk analysis.",
+  "We may access product, inventory, order, and limited customer-related order data only when required by Shopify APIs to calculate sales velocity.",
+  "We do not sell merchant data.",
+  "We do not use customer data for advertising.",
+  "We do not share store data with third parties except service providers required to operate the app.",
+  "Merchants may request data deletion by contacting support.",
 ];
 
 export const metadata = {
   title: "Privacy Policy | China Supply Radar",
-  description: "Privacy Policy for the China Supply Radar Chrome extension.",
+  description:
+    "Privacy Policy for China Supply Radar Shopify App and Chrome Extension.",
 };
 
 export default function PrivacyPage() {
@@ -25,10 +25,10 @@ export default function PrivacyPage() {
             China Supply Radar
           </Link>
           <Link
-            href="/"
+            href="/support"
             className="rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:border-slate-400 dark:border-slate-700 dark:text-slate-200 dark:hover:border-slate-500"
           >
-            Back home
+            Support
           </Link>
         </nav>
       </header>
@@ -38,18 +38,16 @@ export default function PrivacyPage() {
           Privacy Policy
         </p>
         <h1 className="mt-4 text-4xl font-bold text-slate-950 dark:text-white">
-          Your supplier and inventory data stays local.
+          Privacy for Shopify merchants and ecommerce sellers.
         </h1>
         <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300">
-          China Supply Radar is designed as a local-first Chrome extension for
-          supply risk, reorder timing, and supplier reliability decisions. No
-          account is required, no supplier data is uploaded, and no third-party
-          advertising tracking is used.
+          China Supply Radar is an inventory planning and supply chain risk tool
+          for Shopify merchants and ecommerce sellers sourcing from China.
         </p>
 
         <section className="mt-10 rounded-lg border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-900">
           <h2 className="text-2xl font-bold text-slate-950 dark:text-white">
-            What We Do Not Collect
+            Shopify Store Data
           </h2>
           <ul className="mt-5 space-y-4">
             {policyItems.map((item) => (
@@ -64,20 +62,21 @@ export default function PrivacyPage() {
         <section className="mt-8 grid gap-5 md:grid-cols-2">
           <div className="rounded-lg border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-900">
             <h2 className="text-xl font-bold text-slate-950 dark:text-white">
-              Local Storage
+              Data Use
             </h2>
             <p className="mt-3 leading-7 text-slate-600 dark:text-slate-300">
-              All inventory records, supplier notes, order history, and extension
-              settings are saved in your browser using chrome.storage.local.
+              Store data is used to calculate inventory health, sales velocity,
+              reorder recommendations, upcoming stockout risk, and China holiday
+              impact.
             </p>
           </div>
           <div className="rounded-lg border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-900">
             <h2 className="text-xl font-bold text-slate-950 dark:text-white">
-              Data Removal
+              Data Deletion
             </h2>
             <p className="mt-3 leading-7 text-slate-600 dark:text-slate-300">
-              You can remove local extension data by uninstalling China Supply
-              Radar from Chrome.
+              Merchants may request data deletion by contacting support at{" "}
+              {siteConfig.supportEmail}.
             </p>
           </div>
         </section>
@@ -87,12 +86,12 @@ export default function PrivacyPage() {
             Contact
           </h2>
           <p className="mt-3 leading-7 text-slate-600 dark:text-slate-300">
-            For privacy questions, contact{" "}
+            For privacy questions or data deletion requests, contact{" "}
             <a
-              href="mailto:hello@chinasupplyradar.com"
+              href={`mailto:${siteConfig.supportEmail}`}
               className="font-semibold text-teal-700 hover:text-teal-800 dark:text-teal-300 dark:hover:text-teal-200"
             >
-              hello@chinasupplyradar.com
+              {siteConfig.supportEmail}
             </a>
             .
           </p>

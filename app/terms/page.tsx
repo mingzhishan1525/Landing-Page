@@ -1,8 +1,17 @@
 import Link from "next/link";
+import { siteConfig } from "../config";
+
+const terms = [
+  "App is provided as an inventory planning and supply chain risk tool.",
+  "Recommendations are informational only and do not guarantee business outcomes.",
+  "Merchants are responsible for final purchasing and inventory decisions.",
+  "We may update or discontinue features.",
+];
 
 export const metadata = {
   title: "Terms of Service | China Supply Radar",
-  description: "Terms of Service for the China Supply Radar Chrome extension.",
+  description:
+    "Terms of Service for China Supply Radar Shopify App and Chrome Extension.",
 };
 
 export default function TermsPage() {
@@ -14,10 +23,10 @@ export default function TermsPage() {
             China Supply Radar
           </Link>
           <Link
-            href="/"
+            href="/support"
             className="rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:border-slate-400 dark:border-slate-700 dark:text-slate-200 dark:hover:border-slate-500"
           >
-            Back home
+            Support
           </Link>
         </nav>
       </header>
@@ -30,47 +39,36 @@ export default function TermsPage() {
           Terms for using China Supply Radar.
         </h1>
         <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300">
-          China Supply Radar provides local planning tools for supplier
-          reliability, reorder timing, and China supply risk. The extension is
-          intended to support operational decisions, not replace professional
-          logistics, legal, or financial advice.
+          These terms apply to the China Supply Radar Shopify App, Chrome
+          Extension, and related support website.
         </p>
 
         <section className="mt-10 space-y-5">
-          {[
-            [
-              "Local Use",
-              "You are responsible for the inventory, supplier, and order information you enter into the extension. The extension stores this data locally in your browser.",
-            ],
-            [
-              "Planning Estimates",
-              "Reorder dates, stockout dates, risk levels, and supplier scores are estimates based on the data you provide. Actual production and shipping outcomes may vary.",
-            ],
-            [
-              "Acceptable Use",
-              "Do not use China Supply Radar in a way that violates applicable laws, browser policies, marketplace policies, or third-party website terms.",
-            ],
-            [
-              "Availability",
-              "We may update, modify, or discontinue parts of the extension or website as the product evolves.",
-            ],
-            [
-              "Contact",
-              "For support or terms questions, contact support@chinasupplyradar.com.",
-            ],
-          ].map(([title, body]) => (
+          {terms.map((term) => (
             <div
-              key={title}
+              key={term}
               className="rounded-lg border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-900"
             >
-              <h2 className="text-xl font-bold text-slate-950 dark:text-white">
-                {title}
-              </h2>
-              <p className="mt-3 leading-7 text-slate-600 dark:text-slate-300">
-                {body}
+              <p className="leading-7 text-slate-700 dark:text-slate-300">
+                {term}
               </p>
             </div>
           ))}
+        </section>
+
+        <section className="mt-8 rounded-lg border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-900">
+          <h2 className="text-xl font-bold text-slate-950 dark:text-white">
+            Contact
+          </h2>
+          <p className="mt-3 leading-7 text-slate-600 dark:text-slate-300">
+            Contact email:{" "}
+            <a
+              href={`mailto:${siteConfig.supportEmail}`}
+              className="font-semibold text-teal-700 hover:text-teal-800 dark:text-teal-300 dark:hover:text-teal-200"
+            >
+              {siteConfig.supportEmail}
+            </a>
+          </p>
         </section>
       </article>
     </main>
