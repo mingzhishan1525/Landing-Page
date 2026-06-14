@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from "./Analytics";
 
 type NewsletterSignupProps = {
   source: string;
@@ -27,6 +28,7 @@ export default function NewsletterSignup({ source }: NewsletterSignupProps) {
       const data = (await response.json()) as { message?: string };
       setMessage(data.message || "Subscription successful");
       if (response.ok) {
+        trackEvent("newsletter_signup", { source });
         setEmail("");
       }
     } catch {

@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { trackEvent } from "../../components/Analytics";
 import ToolCtas from "../components/ToolCtas";
 
 function addDays(days: number) {
@@ -48,9 +49,12 @@ export default function ReorderCalculator() {
               min="0"
               value={value as number}
               onChange={(event) =>
-                (setter as React.Dispatch<React.SetStateAction<number>>) (
-                  Number(event.target.value),
-                )
+                {
+                  (setter as React.Dispatch<React.SetStateAction<number>>) (
+                    Number(event.target.value),
+                  );
+                  trackEvent("calculator_used", { calculator: "reorder" });
+                }
               }
               className="mt-2 min-h-12 w-full rounded-md border border-slate-300 px-3 dark:border-slate-700 dark:bg-slate-950"
             />

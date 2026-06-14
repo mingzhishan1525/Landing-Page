@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { trackEvent } from "../../components/Analytics";
 import { chinaHolidays } from "../../../lib/data/china-holidays";
 import { supplierRegions } from "../../../lib/data/supplier-regions";
 import ToolCtas from "../components/ToolCtas";
@@ -67,9 +68,12 @@ export default function StockoutRiskCalculator() {
               min="0"
               value={value as number}
               onChange={(event) =>
-                (setter as React.Dispatch<React.SetStateAction<number>>) (
-                  Number(event.target.value),
-                )
+                {
+                  (setter as React.Dispatch<React.SetStateAction<number>>) (
+                    Number(event.target.value),
+                  );
+                  trackEvent("calculator_used", { calculator: "stockout_risk" });
+                }
               }
               className="mt-2 min-h-12 w-full rounded-md border border-slate-300 px-3 dark:border-slate-700 dark:bg-slate-950"
             />
@@ -79,7 +83,10 @@ export default function StockoutRiskCalculator() {
           Supplier Region
           <select
             value={supplierRegion}
-            onChange={(event) => setSupplierRegion(event.target.value)}
+            onChange={(event) => {
+              setSupplierRegion(event.target.value);
+              trackEvent("calculator_used", { calculator: "stockout_risk" });
+            }}
             className="mt-2 min-h-12 w-full rounded-md border border-slate-300 px-3 dark:border-slate-700 dark:bg-slate-950"
           >
             {supplierRegions.map((region) => (
@@ -91,7 +98,10 @@ export default function StockoutRiskCalculator() {
           Upcoming Holiday
           <select
             value={holidayId}
-            onChange={(event) => setHolidayId(event.target.value)}
+            onChange={(event) => {
+              setHolidayId(event.target.value);
+              trackEvent("calculator_used", { calculator: "stockout_risk" });
+            }}
             className="mt-2 min-h-12 w-full rounded-md border border-slate-300 px-3 dark:border-slate-700 dark:bg-slate-950"
           >
             {chinaHolidays.map((holiday) => (

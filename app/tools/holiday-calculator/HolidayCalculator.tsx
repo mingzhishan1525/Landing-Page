@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { trackEvent } from "../../components/Analytics";
 import { chinaHolidays, getNearestHoliday } from "../../../lib/data/china-holidays";
 import { supplierRegions } from "../../../lib/data/supplier-regions";
 import ToolCtas from "../components/ToolCtas";
@@ -53,7 +54,10 @@ export default function HolidayCalculator() {
           <input
             type="date"
             value={orderDate}
-            onChange={(event) => setOrderDate(event.target.value)}
+            onChange={(event) => {
+              setOrderDate(event.target.value);
+              trackEvent("calculator_used", { calculator: "holiday" });
+            }}
             className="mt-2 min-h-12 w-full rounded-md border border-slate-300 px-3 dark:border-slate-700 dark:bg-slate-950"
           />
         </label>
@@ -61,7 +65,10 @@ export default function HolidayCalculator() {
           Supplier Province
           <select
             value={province}
-            onChange={(event) => setProvince(event.target.value)}
+            onChange={(event) => {
+              setProvince(event.target.value);
+              trackEvent("calculator_used", { calculator: "holiday" });
+            }}
             className="mt-2 min-h-12 w-full rounded-md border border-slate-300 px-3 dark:border-slate-700 dark:bg-slate-950"
           >
             {supplierRegions.map((region) => (
@@ -75,7 +82,10 @@ export default function HolidayCalculator() {
             type="number"
             min="1"
             value={leadTimeDays}
-            onChange={(event) => setLeadTimeDays(Number(event.target.value))}
+            onChange={(event) => {
+              setLeadTimeDays(Number(event.target.value));
+              trackEvent("calculator_used", { calculator: "holiday" });
+            }}
             className="mt-2 min-h-12 w-full rounded-md border border-slate-300 px-3 dark:border-slate-700 dark:bg-slate-950"
           />
         </label>
