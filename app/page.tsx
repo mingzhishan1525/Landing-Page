@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import NewsletterSignup from "./components/NewsletterSignup";
 import { isChromeStorePublished, siteConfig } from "./config";
 
 export const metadata: Metadata = {
@@ -536,25 +537,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <form className="mt-6 flex flex-col gap-3 sm:flex-row" action="#" method="post">
-              <label className="sr-only" htmlFor="waitlist-email">
-                Email address
-              </label>
-              <input
-                id="waitlist-email"
-                name="email"
-                type="email"
-                required
-                placeholder="you@example.com"
-                className="min-h-12 flex-1 rounded-md border border-slate-300 bg-white px-4 text-base text-slate-950 outline-none focus:border-teal-600 dark:border-slate-700 dark:bg-slate-950 dark:text-white"
-              />
-              <button
-                type="submit"
-                className="min-h-12 rounded-md bg-slate-950 px-6 py-3 text-base font-semibold text-white hover:bg-slate-800 dark:bg-teal-400 dark:text-slate-950 dark:hover:bg-teal-300"
-              >
-                Join Waitlist
-              </button>
-            </form>
+            <NewsletterSignup source="home" />
           </div>
         </div>
       </section>
