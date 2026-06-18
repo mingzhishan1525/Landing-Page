@@ -5,6 +5,8 @@ const terms = [
   "App is provided as an inventory planning and supply chain risk tool.",
   "Recommendations are informational only and do not guarantee business outcomes.",
   "Merchants are responsible for final purchasing and inventory decisions.",
+  "Current pricing is Free Beta. No charges are made through Shopify at this time.",
+  "Future paid plans may be introduced later with advance notice.",
   "We may update or discontinue features.",
 ];
 
