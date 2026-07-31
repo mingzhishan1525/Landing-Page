@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { trackEvent } from "./Analytics";
+import { trackGrowthEvent } from "./growth-tracking";
 
 type NewsletterSignupProps = {
   source: string;
@@ -29,6 +30,13 @@ export default function NewsletterSignup({ source }: NewsletterSignupProps) {
       setMessage(data.message || "Subscription successful");
       if (response.ok) {
         trackEvent("newsletter_signup", { source });
+        trackGrowthEvent("SIGNUP", {
+          source: "website",
+          metadata: {
+            form: "newsletter_signup",
+            signup_source: source,
+          },
+        });
         setEmail("");
       }
     } catch {

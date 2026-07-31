@@ -2,6 +2,7 @@
 
 import { chromeStoreCta, isChromeStorePublished, siteConfig } from "../config";
 import { trackEvent } from "./Analytics";
+import { trackGrowthEvent } from "./growth-tracking";
 
 type InstallCtaProps = {
   className: string;
@@ -19,6 +20,14 @@ export default function InstallCta({ className, label = chromeStoreCta }: Instal
       onClick={(event) => {
         trackEvent("Install Button Click", {
           chrome_store_status: siteConfig.chromeStoreStatus,
+        });
+        trackGrowthEvent("CLICK", {
+          source: "website",
+          metadata: {
+            button: "chrome_install",
+            destination: href,
+            chrome_store_status: siteConfig.chromeStoreStatus,
+          },
         });
 
         if (!isChromeStorePublished) {

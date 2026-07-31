@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TrackedLink from "../components/TrackedLink";
 import { growthLinks, withUtm } from "../../lib/growth-links";
 
 export const metadata = {
@@ -74,12 +75,14 @@ export default function ShopifyPage() {
             reorder earlier, and avoid supply chain disruption during Chinese
             holidays.
           </p>
-          <a
+          <TrackedLink
             href={withUtm(growthLinks.shopifyInstallUrl, "shopify")}
+            buttonName="shopify_install"
+            eventSource="shopify"
             className="mt-7 inline-flex min-h-12 items-center justify-center rounded-md bg-teal-600 px-6 py-3 text-base font-semibold text-white hover:bg-teal-700"
           >
             Install Shopify App
-          </a>
+          </TrackedLink>
         </div>
 
         <div className="rounded-lg border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-900">

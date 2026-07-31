@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import TrackedLink from "../../components/TrackedLink";
 import { getSeoArticle, seoArticles } from "../../../lib/data/blog-posts";
 import { growthLinks, withUtm } from "../../../lib/growth-links";
 
@@ -106,18 +107,22 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
             ))}
           </ul>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a
+            <TrackedLink
               href={withUtm(growthLinks.chromeInstallUrl, "blog")}
+              buttonName="chrome_install"
+              eventSource="blog"
               className="inline-flex min-h-12 items-center justify-center rounded-md bg-teal-600 px-5 py-3 font-semibold text-white hover:bg-teal-700"
             >
               Install Chrome Extension
-            </a>
-            <a
+            </TrackedLink>
+            <TrackedLink
               href={withUtm(growthLinks.shopifyInstallUrl, "blog")}
+              buttonName="shopify_install"
+              eventSource="blog"
               className="inline-flex min-h-12 items-center justify-center rounded-md border border-slate-300 bg-white px-5 py-3 font-semibold text-slate-900 hover:border-slate-400 dark:border-slate-700 dark:bg-slate-950 dark:text-white"
             >
               Connect Shopify Store
-            </a>
+            </TrackedLink>
           </div>
         </section>
 

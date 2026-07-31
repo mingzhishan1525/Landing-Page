@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Analytics from "./components/Analytics";
 import { siteConfig } from "./config";
 import "./globals.css";
@@ -51,7 +52,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Analytics />
+        <Suspense fallback={null}>
+          <Analytics />
+        </Suspense>
         {children}
       </body>
     </html>

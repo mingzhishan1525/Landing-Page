@@ -1,10 +1,11 @@
 "use client";
 
 import Script from "next/script";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 
 import { siteConfig } from "../config";
+import { trackGrowthEvent } from "./growth-tracking";
 
 declare global {
   interface Window {
@@ -28,6 +29,7 @@ export function trackEvent(eventName: string, parameters?: Record<string, unknow
 
 export default function Analytics() {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const measurementId = siteConfig.gaMeasurementId;
 
   useEffect(() => {
@@ -36,7 +38,15 @@ export default function Analytics() {
     if (eventName) {
       trackEvent(eventName, { page_path: pathname });
     }
-  }, [pathname]);
+
+    trackGrowthEvent("VIEW", {
+      source: "website",
+      metadata: {
+        page_path: pathname,
+        search: searchParams.toString(),
+      },
+    });
+  }, [pathname, searchParams]);
 
   if (!measurementId) {
     return null;

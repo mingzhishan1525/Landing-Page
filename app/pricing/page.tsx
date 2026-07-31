@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { siteConfig } from "../config";
+import TrackedLink from "../components/TrackedLink";
+import PricingAnalytics from "./PricingAnalytics";
 
 export const metadata = {
   title: "Pricing | China Supply Radar",
@@ -13,21 +15,21 @@ const plans = [
     price: "$0",
     description: "Basic inventory and China supply risk visibility.",
     features: [
-      "Inventory health overview",
+      "Overall supply risk score",
       "China holiday impact",
-      "Basic risk visibility",
+      "Track 1 SKU",
     ],
   },
   {
     name: "Pro",
-    price: "$9/month",
+    price: "$29/month",
     description: "Reorder planning for active Shopify merchants.",
     features: [
-      "Sales velocity",
-      "Reorder queue",
-      "Upcoming stockout",
-      "Risk recommendations",
-      "Priority support",
+      "Unlimited SKU monitoring",
+      "Supplier reliability intelligence",
+      "Inventory risk prediction",
+      "Reorder forecasting",
+      "Weekly risk alerts",
     ],
   },
 ];
@@ -35,6 +37,7 @@ const plans = [
 export default function PricingPage() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-950 dark:bg-slate-950 dark:text-white">
+      <PricingAnalytics />
       <header className="border-b border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
         <nav className="mx-auto flex max-w-5xl items-center justify-between px-5 py-4">
           <Link href="/" className="text-base font-bold text-slate-950 dark:text-white">
@@ -90,16 +93,15 @@ export default function PricingPage() {
           ))}
         </div>
 
-        <p className="mt-8 rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm font-semibold text-amber-950 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-100">
-          Pricing may change before public launch.
-        </p>
-
-        <a
-          href={`mailto:${siteConfig.supportEmail}?subject=China%20Supply%20Radar%20Pricing`}
+        <TrackedLink
+          href={siteConfig.shopifyAppUrl}
+          buttonName="pricing_upgrade_pro"
+          eventSource="pricing_page"
+          commercialEvent="UPGRADE_CLICK"
           className="mt-8 inline-flex min-h-12 items-center justify-center rounded-md bg-teal-600 px-6 py-3 text-base font-semibold text-white hover:bg-teal-700"
         >
-          Contact Support
-        </a>
+          Start Pro · $29/month
+        </TrackedLink>
       </section>
     </main>
   );

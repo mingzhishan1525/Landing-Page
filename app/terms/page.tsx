@@ -5,8 +5,8 @@ const terms = [
   "App is provided as an inventory planning and supply chain risk tool.",
   "Recommendations are informational only and do not guarantee business outcomes.",
   "Merchants are responsible for final purchasing and inventory decisions.",
-  "Current pricing is Free Beta. No charges are made through Shopify at this time.",
-  "Future paid plans may be introduced later with advance notice.",
+  "Paid app charges, when approved by a merchant, are billed through Shopify using Shopify App Billing.",
+  "China Supply Radar Pro is offered at $29 USD per month when the merchant approves the subscription in Shopify.",
   "We may update or discontinue features.",
 ];
 

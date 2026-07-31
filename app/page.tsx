@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import NewsletterSignup from "./components/NewsletterSignup";
+import TrackedLink from "./components/TrackedLink";
 import { isChromeStorePublished, siteConfig } from "./config";
 import { growthLinks, withUtm } from "../lib/growth-links";
 
@@ -262,12 +263,14 @@ export default function Home() {
             <Link href="/shopify" className="hidden hover:text-slate-950 dark:hover:text-white sm:inline">
               Shopify
             </Link>
-            <a
+            <TrackedLink
               href={withUtm(growthLinks.shopifyInstallUrl, "website")}
+              buttonName="shopify_install"
+              eventSource="website"
               className="rounded-md bg-slate-950 px-4 py-2 text-white hover:bg-slate-800 dark:bg-teal-400 dark:text-slate-950 dark:hover:bg-teal-300"
             >
               Install Shopify App
-            </a>
+            </TrackedLink>
           </div>
         </nav>
       </header>
@@ -289,12 +292,14 @@ export default function Home() {
             planning and a Chrome Extension for China supplier context.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <a
+            <TrackedLink
               href={withUtm(growthLinks.shopifyInstallUrl, "website")}
+              buttonName="shopify_install"
+              eventSource="website"
               className="inline-flex min-h-12 items-center justify-center rounded-md bg-teal-600 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-teal-600/20 hover:bg-teal-700"
             >
               Install Shopify App
-            </a>
+            </TrackedLink>
             <a
               href="/support"
               className="inline-flex min-h-12 items-center justify-center rounded-md border border-slate-300 bg-white px-6 py-3 text-base font-semibold text-slate-900 hover:border-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:border-slate-500"
@@ -551,12 +556,14 @@ export default function Home() {
           <p className="mt-4 text-lg text-slate-300 dark:text-slate-900">
             Start with inventory risk visibility and China holiday impact.
           </p>
-          <a
+          <TrackedLink
             href={withUtm(growthLinks.shopifyInstallUrl, "website")}
+            buttonName="shopify_install"
+            eventSource="website"
             className="mt-8 inline-flex min-h-12 items-center justify-center rounded-md bg-teal-500 px-6 py-3 text-base font-semibold text-slate-950 hover:bg-teal-400 dark:bg-slate-950 dark:text-white dark:hover:bg-slate-800"
           >
             Install Shopify App
-          </a>
+          </TrackedLink>
         </div>
       </section>
 

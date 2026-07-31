@@ -1,6 +1,21 @@
-# China Supply Radar Landing Page
+# China Supply Radar Growth Engine
 
-A static Next.js landing page for China Supply Radar, a Chrome extension that helps eCommerce sellers avoid stockouts caused by China supplier delays.
+China Supply Radar Growth Engine is the acquisition system for the
+China Supply Radar product line. It is not an independent SaaS product.
+
+This Next.js project includes the landing page, SEO tools, blog, newsletter,
+generated content, analytics events, and the conversion funnel for the
+China Supply Radar Shopify App and Chrome Extension.
+
+## Product Line
+
+- Product line: `China Supply Radar`
+- Surface: `Growth Engine / Landing / SEO Tools`
+- Priority: `P0 acquisition system`
+- Related products: `China Supply Radar Shopify App` and `China Supply Radar Chrome Extension`
+- Canonical name: `China Supply Radar Growth Engine`
+- Deprecated name: `China Supply Growth System`
+- Boundary: do not describe this project as a standalone SaaS.
 
 ## Tech Stack
 
