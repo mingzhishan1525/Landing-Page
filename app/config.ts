@@ -1,3 +1,7 @@
+const productionShopifyOnboardingUrl =
+  "https://app.chinasupplyradar.com/onboarding";
+const configuredShopifyAppUrl = process.env.NEXT_PUBLIC_SHOPIFY_APP_URL?.trim();
+
 export const siteConfig = {
   name: "China Supply Radar",
   url: "https://chinasupplyradar.com",
@@ -6,8 +10,9 @@ export const siteConfig = {
   supportEmail: "support@chinasupplyradar.com",
   helloEmail: "hello@chinasupplyradar.com",
   shopifyAppUrl:
-    process.env.NEXT_PUBLIC_SHOPIFY_APP_URL ||
-    "https://app.chinasupplyradar.com/onboarding",
+    configuredShopifyAppUrl && configuredShopifyAppUrl !== "/support"
+      ? configuredShopifyAppUrl
+      : productionShopifyOnboardingUrl,
   chromeStoreUrl:
     process.env.NEXT_PUBLIC_CHROME_STORE_URL ||
     "https://chromewebstore.google.com/",
