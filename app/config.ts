@@ -6,7 +6,8 @@ export const siteConfig = {
   supportEmail: "support@chinasupplyradar.com",
   helloEmail: "hello@chinasupplyradar.com",
   shopifyAppUrl:
-    process.env.NEXT_PUBLIC_SHOPIFY_APP_URL || "/support",
+    process.env.NEXT_PUBLIC_SHOPIFY_APP_URL ||
+    "https://app.chinasupplyradar.com/onboarding",
   chromeStoreUrl:
     process.env.NEXT_PUBLIC_CHROME_STORE_URL ||
     "https://chromewebstore.google.com/",

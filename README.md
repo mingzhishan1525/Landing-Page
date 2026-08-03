@@ -41,6 +41,7 @@ China Supply Radar Shopify App and Chrome Extension.
 Copy `.env.example` to your deployment provider and fill values as needed.
 
 ```bash
+NEXT_PUBLIC_SHOPIFY_APP_URL=https://app.chinasupplyradar.com/onboarding
 NEXT_PUBLIC_CHROME_STORE_STATUS=pending_review
 NEXT_PUBLIC_CHROME_STORE_URL=https://chromewebstore.google.com/
 NEXT_PUBLIC_GA_MEASUREMENT_ID=
