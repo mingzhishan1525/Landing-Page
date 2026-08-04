@@ -22,7 +22,10 @@ type TrackGrowthEventOptions = {
 
 const VISITOR_ID_KEY = "csr.growth.visitor_id.v1";
 const SESSION_ID_KEY = "csr.growth.session_id.v1";
-const growthApiUrl = process.env.NEXT_PUBLIC_GROWTH_ENGINE_API_URL?.replace(/\/$/, "") || "";
+const growthApiUrl = (
+  process.env.NEXT_PUBLIC_GROWTH_ENGINE_API_URL ||
+  "https://api-production-ac5ca.up.railway.app"
+).replace(/\/$/, "");
 
 export function trackGrowthEvent(
   eventType: GrowthEventType,
