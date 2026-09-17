@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { siteConfig } from "../config";
 import TrackedLink from "../components/TrackedLink";
+import InstallCta from "../components/InstallCta";
 import PricingAnalytics from "./PricingAnalytics";
 
 export const metadata = {
@@ -13,7 +14,7 @@ const plans = [
   {
     name: "Free",
     price: "$0",
-    description: "Basic inventory and China supply risk visibility.",
+    description: "Free Chrome Extension. No Shopify account required.",
     features: [
       "Overall supply risk score",
       "China holiday impact",
@@ -23,7 +24,7 @@ const plans = [
   {
     name: "Pro",
     price: "$29/month",
-    description: "Reorder planning for active Shopify merchants.",
+    description: "Requires a Shopify subscription. Connect the extension using a code from the Shopify App.",
     features: [
       "Unlimited SKU monitoring",
       "Supplier reliability intelligence",
@@ -93,6 +94,10 @@ export default function PricingPage() {
           ))}
         </div>
 
+        <InstallCta
+          label="Add to Chrome — Free"
+          className="mt-8 mr-4 inline-flex min-h-12 items-center justify-center rounded-md border border-teal-600 px-6 py-3 text-base font-semibold text-teal-700 dark:text-teal-300"
+        />
         <TrackedLink
           href={siteConfig.shopifyAppUrl}
           buttonName="pricing_upgrade_pro"

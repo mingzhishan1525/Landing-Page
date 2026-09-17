@@ -1,6 +1,7 @@
 "use client";
 
 import { chromeStoreCta, isChromeStorePublished, siteConfig } from "../config";
+import { withUtm } from "../../lib/growth-links";
 import { trackEvent } from "./Analytics";
 import { trackGrowthEvent } from "./growth-tracking";
 
@@ -10,7 +11,7 @@ type InstallCtaProps = {
 };
 
 export default function InstallCta({ className, label = chromeStoreCta }: InstallCtaProps) {
-  const href = isChromeStorePublished ? siteConfig.chromeStoreUrl : "#";
+  const href = isChromeStorePublished ? withUtm(siteConfig.chromeStoreUrl, "website") : "#";
 
   return (
     <a

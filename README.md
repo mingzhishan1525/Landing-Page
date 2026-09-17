@@ -42,21 +42,14 @@ Copy `.env.example` to your deployment provider and fill values as needed.
 
 ```bash
 NEXT_PUBLIC_SHOPIFY_APP_URL=https://app.chinasupplyradar.com/onboarding
-NEXT_PUBLIC_CHROME_STORE_STATUS=pending_review
-NEXT_PUBLIC_CHROME_STORE_URL=https://chromewebstore.google.com/
 NEXT_PUBLIC_GA_MEASUREMENT_ID=
 NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=
 ```
 
-When Chrome Web Store review is approved, set:
-
-```bash
-NEXT_PUBLIC_CHROME_STORE_STATUS=published
-NEXT_PUBLIC_CHROME_STORE_URL=<final Chrome Web Store listing URL>
-```
-
-The homepage CTA will switch from `Chrome Web Store Review Pending` to
-`Install from Chrome Web Store`.
+The published Chrome Web Store listing and status are defined in `app/config.ts`.
+Legacy `NEXT_PUBLIC_CHROME_STORE_STATUS` and `NEXT_PUBLIC_CHROME_STORE_URL`
+environment variables are no longer used, so stale deployment values cannot
+disable the published installation link.
 
 ## Local Development
 

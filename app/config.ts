@@ -14,10 +14,9 @@ export const siteConfig = {
       ? configuredShopifyAppUrl
       : productionShopifyOnboardingUrl,
   chromeStoreUrl:
-    process.env.NEXT_PUBLIC_CHROME_STORE_URL ||
-    "https://chromewebstore.google.com/",
+    "https://chromewebstore.google.com/detail/china-supply-radar/ilkmanjaigbnbnicnoobffekdcdfmlkg",
   chromeStoreStatus:
-    process.env.NEXT_PUBLIC_CHROME_STORE_STATUS || "pending_review",
+    "published",
   gaMeasurementId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "",
   googleSiteVerification:
     process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",

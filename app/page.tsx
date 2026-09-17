@@ -57,9 +57,9 @@ const features = [
 ];
 
 const steps = [
-  "Install the Shopify App or Chrome Extension.",
-  "Review inventory, sales velocity, and China supply risk signals.",
-  "Use reorder queues and risk alerts to plan supplier action.",
+  "Install the free Chrome Extension. No Shopify account is needed for Free features.",
+  "Track one SKU, save supplier notes, and check upcoming China holiday risk.",
+  "Confirm lead times with your supplier. Connect a Shopify Pro subscription for advanced planning.",
 ];
 
 const scenarioMetrics = [
@@ -78,39 +78,39 @@ const sellerTypes = [
 ];
 
 const privacyPoints = [
-  "No account required.",
-  "No cloud sync.",
-  "No supplier data uploaded.",
-  "No third-party tracking.",
+  "Free extension: no Shopify account required.",
+  "Extension notes and entered inventory stay local.",
+  "Sourcing-page content is processed locally.",
+  "Limited usage events and Pro verification use online services.",
 ];
 
 const faqs = [
   {
     question: "Is China Supply Radar free?",
-    answer: "Yes. Current version is completely free.",
+    answer: "The Chrome Extension has a Free plan with China holiday alerts, one-SKU tracking, supplier notes, and message templates. Pro costs $29/month and requires a Shopify subscription. See Pricing for the plan details.",
   },
   {
     question: "Does my data leave my browser?",
     answer:
-      "No. All inventory, supplier, and order data remain locally in your browser.",
+      "Extension notes and manually entered inventory stay in your browser. Limited usage events are sent to our services, and Pro connection codes are sent for subscription verification. The Shopify App processes store data for inventory planning. Read our Privacy Policy for details.",
   },
   {
     question: "Does it require login?",
-    answer: "No account or login is required.",
+    answer: "Free extension features do not require a Shopify account. Pro requires a Shopify subscription and a connection code from the Shopify App.",
   },
   {
     question: "Which platforms are supported?",
     answer:
-      "Shopify, Amazon, TikTok Shop, Alibaba, and 1688 workflows.",
+      "Supplier detection supports Alibaba, 1688, and Made-in-China pages. The Shopify App connects to Shopify inventory and orders. Amazon and TikTok Shop sellers can use the standalone tools; this does not imply direct store integration.",
   },
   {
     question: "Can I track multiple suppliers?",
-    answer: "Yes. Supplier reliability can be tracked independently.",
+    answer: "Local supplier notes are available free. Advanced supplier reliability and unlimited SKU monitoring require Pro.",
   },
   {
     question: "Does it collect supplier information?",
     answer:
-      "No. China Supply Radar does not upload supplier data to any server.",
+      "The extension processes sourcing pages locally and keeps supplier notes in your browser. Shopify App data handling is described separately in our Privacy Policy.",
   },
 ];
 
@@ -216,7 +216,7 @@ function ProductPreview() {
           </div>
           <div className="border-t border-slate-200 px-4 py-3 dark:border-slate-700">
             <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">
-              Planning view for Shopify inventory and China supply risk
+              Illustrative Shopify planning view — sample data, not a customer result
             </p>
           </div>
         </div>
@@ -264,12 +264,12 @@ export default function Home() {
               Shopify
             </Link>
             <TrackedLink
-              href={withUtm(growthLinks.shopifyInstallUrl, "website")}
-              buttonName="shopify_install"
+              href={withUtm(growthLinks.chromeInstallUrl, "website")}
+              buttonName="chrome_install"
               eventSource="website"
               className="rounded-md bg-slate-950 px-4 py-2 text-white hover:bg-slate-800 dark:bg-teal-400 dark:text-slate-950 dark:hover:bg-teal-300"
             >
-              Install Shopify App
+              Add to Chrome — Free
             </TrackedLink>
           </div>
         </nav>
@@ -281,34 +281,34 @@ export default function Home() {
             Shopify App and Chrome Extension for ecommerce sellers
           </p>
           <h1 className="max-w-3xl break-words text-4xl font-bold leading-tight text-slate-950 dark:text-white sm:text-5xl lg:text-[3.15rem]">
-            Inventory Risk & Supply Chain Planning for Shopify.
+            Plan China sourcing before holiday delays affect your stock.
           </h1>
           <p className="mt-4 max-w-2xl text-xl font-semibold leading-snug text-slate-800 dark:text-slate-100 sm:text-2xl">
-            Track sales velocity, reorder queues, upcoming stockout alerts, and
-            China holiday impact before inventory problems hit your store.
+            Check China holiday risk, track one SKU, and keep supplier notes
+            while you plan your next order.
           </p>
           <p className="mt-4 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg">
-            China Supply Radar supports both a Shopify App for inventory risk
-            planning and a Chrome Extension for China supplier context.
+            Start with the free Chrome Extension. Shopify merchants can connect
+            Pro for advanced inventory and reorder planning at $29/month.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <TrackedLink
-              href={withUtm(growthLinks.shopifyInstallUrl, "website")}
-              buttonName="shopify_install"
+              href={withUtm(growthLinks.chromeInstallUrl, "website")}
+              buttonName="chrome_install"
               eventSource="website"
               className="inline-flex min-h-12 items-center justify-center rounded-md bg-teal-600 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-teal-600/20 hover:bg-teal-700"
             >
-              Install Shopify App
+              Add to Chrome — Free
             </TrackedLink>
             <a
-              href="/support"
+              href={siteConfig.shopifyAppUrl}
               className="inline-flex min-h-12 items-center justify-center rounded-md border border-slate-300 bg-white px-6 py-3 text-base font-semibold text-slate-900 hover:border-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:border-slate-500"
             >
-              Contact Support
+              Explore Shopify App
             </a>
           </div>
           <p className="mt-3 text-sm font-semibold text-slate-600 dark:text-slate-300">
-            Shopify App support site. Chrome Extension: {chromeStoreStatusText}.
+            {chromeStoreStatusText}. Free features need no Shopify account. Actual factory schedules must be confirmed with your supplier.
           </p>
           <div className="mt-5 grid gap-x-6 gap-y-2 sm:grid-cols-3">
             {trustPoints.map((point) => (
@@ -408,7 +408,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-5">
           <div className="max-w-2xl">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-teal-700 dark:text-teal-300">
-              Social Proof
+              Who It Is For
             </p>
             <h2 className="mt-3 text-3xl font-bold text-slate-950 dark:text-white">
               Built For Sellers Working With China
@@ -435,7 +435,7 @@ export default function Home() {
                 How It Works
               </p>
             <h2 className="mt-3 text-3xl font-bold text-slate-950 dark:text-white">
-              From Shopify inventory data to reorder confidence.
+              Start with one SKU and one supplier decision.
             </h2>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
@@ -468,9 +468,8 @@ export default function Home() {
             </h2>
           </div>
           <p className="text-lg leading-8 text-slate-600 dark:text-slate-300">
-            China Supply Radar only accesses Shopify store data required for
-            inventory planning, sales velocity, reorder recommendations, and
-            supply chain risk analysis.
+            Free extension data and Shopify store data follow different paths.
+            Read the <Link href="/privacy" className="underline">Privacy Policy</Link> for local storage, limited usage events, subscription verification, and Shopify data processing.
           </p>
           <div className="grid gap-3 sm:grid-cols-2">
             {privacyPoints.map((point) => (
@@ -557,12 +556,12 @@ export default function Home() {
             Start with inventory risk visibility and China holiday impact.
           </p>
           <TrackedLink
-            href={withUtm(growthLinks.shopifyInstallUrl, "website")}
-            buttonName="shopify_install"
+            href={withUtm(growthLinks.chromeInstallUrl, "website")}
+            buttonName="chrome_install"
             eventSource="website"
             className="mt-8 inline-flex min-h-12 items-center justify-center rounded-md bg-teal-500 px-6 py-3 text-base font-semibold text-slate-950 hover:bg-teal-400 dark:bg-slate-950 dark:text-white dark:hover:bg-slate-800"
           >
-            Install Shopify App
+            Add to Chrome — Free
           </TrackedLink>
         </div>
       </section>
