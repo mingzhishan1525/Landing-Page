@@ -29,13 +29,15 @@ export default function BlogPage() {
           Blog
         </p>
         <h1 className="mt-4 text-4xl font-bold text-slate-950 dark:text-white">
-          China sourcing risk notes are coming soon.
+          Inventory and sourcing planning guides
         </h1>
         <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300">
-          Future posts will cover China holiday shutdowns, supplier reliability,
-          reorder timing, shipping risk, and stockout prevention for ecommerce
-          sellers.
+          Practical examples for understanding stock coverage, reorder timing, and supplier lead times.
         </p>
+        <section className="mt-10 rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-900">
+          <h2 className="text-2xl font-bold"><Link href="/blog/calculate-reorder-window/" className="text-teal-700 underline dark:text-teal-300">How to calculate your reorder window from stock and lead time</Link></h2>
+          <p className="mt-4 leading-7">A worked example using 300 units, daily sales, production, shipping and a planning buffer.</p>
+        </section>
       </article>
     </main>
   );

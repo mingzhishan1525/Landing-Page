@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tools/reorder-calculator",
     "/tools/stockout-risk-calculator",
     "/blog",
+    "/blog/calculate-reorder-window",
     "/contact",
     "/shopify",
     ...seoArticles.map((article) => `/blog/${article.slug}`),
