@@ -35,6 +35,10 @@ export default function BlogPage() {
           Practical examples for understanding stock coverage, reorder timing, and supplier lead times.
         </p>
         <section className="mt-10 rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-900">
+          <h2 className="text-2xl font-bold"><Link href="/blog/supplier-lead-time-checklist/" className="text-teal-700 underline dark:text-teal-300">Supplier lead time checklist: what to confirm before reordering</Link></h2>
+          <p className="mt-4 leading-7">Eight questions to ask, a message you can adapt, and an example of how missing delivery days change your reorder window.</p>
+        </section>
+        <section className="mt-10 rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-900">
           <h2 className="text-2xl font-bold"><Link href="/blog/calculate-reorder-window/" className="text-teal-700 underline dark:text-teal-300">How to calculate your reorder window from stock and lead time</Link></h2>
           <p className="mt-4 leading-7">A worked example using 300 units, daily sales, production, shipping and a planning buffer.</p>
         </section>
