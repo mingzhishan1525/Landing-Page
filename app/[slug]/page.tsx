@@ -24,12 +24,12 @@ export async function generateMetadata({
     title: article.metaTitle,
     description: article.metaDescription,
     alternates: {
-      canonical: `/${article.slug}`,
+      canonical: `/blog/${article.slug}/`,
     },
     openGraph: {
       title: article.metaTitle,
       description: article.metaDescription,
-      url: `/${article.slug}`,
+      url: `/blog/${article.slug}/`,
     },
   };
 }

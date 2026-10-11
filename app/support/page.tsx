@@ -2,6 +2,7 @@ import Link from "next/link";
 import { siteConfig } from "../config";
 
 export const metadata = {
+  alternates: { canonical: "/support/" },
   title: "Support | China Supply Radar",
   description:
     "Support for China Supply Radar Shopify App and Chrome Extension.",

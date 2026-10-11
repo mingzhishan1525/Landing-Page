@@ -2,7 +2,6 @@ import type { MetadataRoute } from "next";
 import { siteConfig } from "./config";
 import { seoArticles } from "../lib/data/blog-posts";
 
-const launchDate = new Date("2026-06-11");
 
 export const dynamic = "force-static";
 
@@ -21,11 +20,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog",
     "/contact",
     "/shopify",
-    ...seoArticles.map((article) => `/${article.slug}`),
     ...seoArticles.map((article) => `/blog/${article.slug}`),
   ].map((path) => ({
-    url: `${siteConfig.url}${path}`,
-    lastModified: launchDate,
+    url: `${siteConfig.url}${path}/`,
     changeFrequency: path === "" ? "weekly" : "monthly",
     priority: path === "" ? 1 : 0.7,
   }));

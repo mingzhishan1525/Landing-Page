@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/tools/" },
   title: "Free Supply Chain Tools | China Supply Radar",
   description:
     "Free China holiday, reorder, and stockout risk calculators for ecommerce sellers.",

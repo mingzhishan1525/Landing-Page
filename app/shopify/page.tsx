@@ -3,6 +3,7 @@ import TrackedLink from "../components/TrackedLink";
 import { growthLinks, withUtm } from "../../lib/growth-links";
 
 export const metadata = {
+  alternates: { canonical: "/shopify/" },
   title: "Shopify App | China Supply Radar",
   description:
     "Prevent stockouts before Chinese factory delays happen with inventory risk, reorder recommendations, and China holiday alerts for Shopify.",

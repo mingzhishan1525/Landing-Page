@@ -11,6 +11,7 @@ const terms = [
 ];
 
 export const metadata = {
+  alternates: { canonical: "/terms/" },
   title: "Terms of Service | China Supply Radar",
   description:
     "Terms of Service for China Supply Radar Shopify App and Chrome Extension.",

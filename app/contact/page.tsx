@@ -2,6 +2,7 @@ import Link from "next/link";
 import { siteConfig } from "../config";
 
 export const metadata = {
+  alternates: { canonical: "/contact/" },
   title: "Contact | China Supply Radar",
   description:
     "Contact China Supply Radar for support, partnerships, and product questions.",

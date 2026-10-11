@@ -1,6 +1,7 @@
 import NewsletterSignup from "../components/NewsletterSignup";
 
 export const metadata = {
+  alternates: { canonical: "/newsletter/" },
   title: "Newsletter | China Supply Radar",
   description:
     "Subscribe to China Supply Radar updates on China holiday risk, supplier reliability, and inventory planning.",

@@ -5,6 +5,7 @@ import InstallCta from "../components/InstallCta";
 import PricingAnalytics from "./PricingAnalytics";
 
 export const metadata = {
+  alternates: { canonical: "/pricing/" },
   title: "Pricing | China Supply Radar",
   description:
     "Pricing for China Supply Radar inventory risk and supply chain planning for Shopify merchants.",

@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
+  alternates: { canonical: "/blog/" },
   title: "Blog | China Supply Radar",
   description:
     "China Supply Radar articles on China supplier delays, reorder timing, and sourcing risk.",

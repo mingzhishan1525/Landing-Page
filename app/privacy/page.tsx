@@ -19,6 +19,7 @@ const extensionDataItems = [
 ];
 
 export const metadata = {
+  alternates: { canonical: "/privacy/" },
   title: "Privacy Policy | China Supply Radar",
   description:
     "Privacy Policy for China Supply Radar Shopify App and Chrome Extension.",
