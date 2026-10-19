@@ -20,6 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog",
     "/blog/calculate-reorder-window",
     "/blog/supplier-lead-time-checklist",
+    "/blog/inbound-inventory-reorder-timeline",
     "/contact",
     "/shopify",
     ...seoArticles.map((article) => `/blog/${article.slug}`),

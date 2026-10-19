@@ -40,4 +40,5 @@ export default function SupplierLeadTimeGuide() { return (
 <p>{""}<strong>{"Does a negative reorder window mean I should order more units?"}</strong>{""}</p>
 <p>{"It flags a timing issue under your inputs. Quantity requires a separate decision that considers demand, incoming orders, budget and minimum order quantities."}</p>
 <p>{"Sources checked October 11, 2026. The checklist and numerical example are editorial planning aids; the sources support the transport and responsibility distinctions above."}</p>
+<h2>Already have an order in transit?</h2><p>Use the <Link href="/blog/inbound-inventory-reorder-timeline/">inbound inventory timeline and downloadable daily tables</Link> to check whether current stock lasts until the receipt becomes usable.</p>
 </article></main>); }

@@ -37,4 +37,5 @@ export default function ReorderGuide() { return (
 <video controls playsInline preload="none" width="1080" height="1080" aria-label="Real Chrome extension demonstration using sample inventory inputs"><source src="/media/reorder-demo.mp4" type="video/mp4" />Your browser does not support video. The inputs and calculation are described above.</video>
 <p className={styles.byline}>Real extension recording using synthetic data. Silent video; all calculations are explained in the article.</p>
 <p><a href="https://x.com/musanmu288388/status/2109135262907609451">View the demonstration on X</a></p>
+<h2>Already have an order in transit?</h2><p>Use the <Link href="/blog/inbound-inventory-reorder-timeline/">inbound inventory timeline and downloadable daily tables</Link> to check whether current stock lasts until the receipt becomes usable.</p>
 </article></main>); }

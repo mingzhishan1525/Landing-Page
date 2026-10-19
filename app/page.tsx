@@ -566,6 +566,7 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-5 py-12" aria-labelledby="planning-guides"><h2 id="planning-guides" className="text-3xl font-bold">Plan your next order with worked examples</h2><p className="mt-4">Start with stock coverage, confirm the lead time, then account for orders already in transit.</p><ul className="mt-6 grid gap-4 sm:grid-cols-3"><li><Link className="underline" href="/blog/calculate-reorder-window/">Calculate your reorder window</Link></li><li><Link className="underline" href="/blog/supplier-lead-time-checklist/">Ask the right lead-time questions</Link></li><li><Link className="underline" href="/blog/inbound-inventory-reorder-timeline/">Plan with inbound inventory and daily tables</Link></li></ul></section>
       <footer className="border-t border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
         <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-8 sm:flex-row sm:items-center sm:justify-between">
           <div>
