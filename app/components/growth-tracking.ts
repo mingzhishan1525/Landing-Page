@@ -35,42 +35,46 @@ export function trackGrowthEvent(
     return;
   }
 
-  const currentUrl = new URL(window.location.href);
-  const visitorId = getOrCreateStorageValue(window.localStorage, VISITOR_ID_KEY);
-  const sessionId = getOrCreateStorageValue(window.sessionStorage, SESSION_ID_KEY);
-  const utmSource = currentUrl.searchParams.get("utm_source");
-  const utmMedium = currentUrl.searchParams.get("utm_medium");
-  const utmCampaign = currentUrl.searchParams.get("utm_campaign");
-  const utmContent = currentUrl.searchParams.get("utm_content");
-  const metadata = {
-    url: `${currentUrl.pathname}${currentUrl.search}`,
-    ...(utmSource ? { utm_source: utmSource } : {}),
-    ...(utmMedium ? { utm_medium: utmMedium } : {}),
-    ...(utmCampaign ? { utm_campaign: utmCampaign } : {}),
-    ...(utmContent ? { utm_content: utmContent } : {}),
-    ...options.metadata,
-  };
+  try {
+    const currentUrl = new URL(window.location.href);
+    const visitorId = getOrCreateStorageValue(window.localStorage, VISITOR_ID_KEY);
+    const sessionId = getOrCreateStorageValue(window.sessionStorage, SESSION_ID_KEY);
+    const utmSource = currentUrl.searchParams.get("utm_source");
+    const utmMedium = currentUrl.searchParams.get("utm_medium");
+    const utmCampaign = currentUrl.searchParams.get("utm_campaign");
+    const utmContent = currentUrl.searchParams.get("utm_content");
+    const metadata = {
+      url: `${currentUrl.pathname}${currentUrl.search}`,
+      ...(utmSource ? { utm_source: utmSource } : {}),
+      ...(utmMedium ? { utm_medium: utmMedium } : {}),
+      ...(utmCampaign ? { utm_campaign: utmCampaign } : {}),
+      ...(utmContent ? { utm_content: utmContent } : {}),
+      ...options.metadata,
+    };
 
-  void fetch(`${growthApiUrl}/api/events`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      event_type: eventType,
-      visitor_id: visitorId,
-      session_id: sessionId,
-      utm_source: utmSource,
-      utm_medium: utmMedium,
-      utm_campaign: utmCampaign,
-      utm_content: utmContent,
-      source: options.source || "website",
-      metadata,
-    }),
-    keepalive: true,
-  }).catch(() => {
-    // Ignore tracking failures so marketing pages stay fast.
-  });
+    void fetch(`${growthApiUrl}/api/events`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        event_type: eventType,
+        visitor_id: visitorId,
+        session_id: sessionId,
+        utm_source: utmSource,
+        utm_medium: utmMedium,
+        utm_campaign: utmCampaign,
+        utm_content: utmContent,
+        source: options.source || "website",
+        metadata,
+      }),
+      keepalive: true,
+    }).catch(() => {
+      // Ignore tracking failures so marketing pages stay fast.
+    });
+  } catch {
+    // Storage may be unavailable. Analytics must not interrupt UI handlers.
+  }
 }
 
 function getOrCreateStorageValue(storage: Storage, key: string) {
