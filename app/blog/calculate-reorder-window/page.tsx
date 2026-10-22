@@ -1,4 +1,5 @@
 import Link from "next/link";
+import GuideNextStep from "../../components/GuideNextStep";
 import styles from "./article.module.css";
 export const metadata = {
  title: "How to calculate your reorder window | China Supply Radar",
@@ -38,4 +39,5 @@ export default function ReorderGuide() { return (
 <p className={styles.byline}>Real extension recording using synthetic data. Silent video; all calculations are explained in the article.</p>
 <p><a href="https://x.com/musanmu288388/status/2109135262907609451">View the demonstration on X</a></p>
 <h2>Already have an order in transit?</h2><p>Use the <Link href="/blog/inbound-inventory-reorder-timeline/">inbound inventory timeline and downloadable daily tables</Link> to check whether current stock lasts until the receipt becomes usable.</p>
+<GuideNextStep source="calculate-reorder-window" />
 </article></main>); }

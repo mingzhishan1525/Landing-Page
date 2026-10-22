@@ -1,9 +1,12 @@
 import Link from "next/link";
+import TimelineCalculator from "./TimelineCalculator";
+import GuideNextStep from "../../components/GuideNextStep";
 import styles from "../calculate-reorder-window/article.module.css";
 export const metadata = {"title": "Inbound inventory and reorder timing | China Supply Radar", "description": "Compare on-time and delayed inbound inventory with daily stock tables, lost sales and back orders. Download four synthetic worked examples as CSV.", "alternates": {"canonical": "/blog/inbound-inventory-reorder-timeline/"}};
 export default function InboundGuide(){return <main className={styles.page}><article className={styles.article}><nav><Link href="/">China Supply Radar</Link><Link href="/blog/">All guides</Link></nav><p className={styles.eyebrow}>INVENTORY PLANNING GUIDE</p><h1>{"Does an inbound order change your reorder timing? A day-by-day timeline"}</h1>
 <p>{"An inbound order can change your replenishment plan, but it cannot fulfill orders before its units are usable. Put each receipt on its expected sellable date, then check whether your existing stock can cover demand until that date. Adding all inbound units to today’s stock hides the risk of a gap."}</p>
 <p>{"Suppose you have 300 sellable units and steady demand of 10 units a day. The simplified no-inbound calculation gives 30 days of coverage. With 14 production days, 7 shipping days and a chosen 7-day buffer, the reorder window is 30 − 14 − 7 − 7 = 2 days: positive, but short. You also have 150 units already on the way."}</p>
+<p><a href="#interactive-timeline">Try the editable timeline with your own numbers</a> or follow the worked examples below.</p>
 <h2>{"What this example assumes"}</h2>
 <p>{"All numbers are synthetic, not customer results or typical shipping times. Day 0 starts with 300 units, no reserved orders and no backlog. Each day has demand for 10 units. We fulfill demand first; the 150-unit receipt becomes usable at the end of its scheduled day. Its first fulfillment opportunity is the following day. There are no other receipts, returns, damaged units or changes in demand."}</p>
 <p>{"In these tables, stock means received, inspected and sellable units, including any units reserved for backlog. Actual inventory systems may also track damaged or otherwise unavailable on-hand stock. Available-to-sell here is sellable stock minus outstanding backlog; a real business may have other reservations to deduct."}</p>
@@ -27,6 +30,7 @@ export default function InboundGuide(){return <main className={styles.page}><art
 <div className={styles.tableWrap}><table><caption>{"Synthetic example; quantities in units. Receipts become usable after daily fulfillment."}</caption><thead><tr><th scope="col">{"Day"}</th><th scope="col">{"Opening stock"}</th><th scope="col">{"Opening backlog"}</th><th scope="col">{"New demand"}</th><th scope="col">{"Backlog fulfilled"}</th><th scope="col">{"New demand fulfilled"}</th><th scope="col">{"Day-end receipt"}</th><th scope="col">{"Closing stock"}</th><th scope="col">{"Closing backlog"}</th></tr></thead><tbody><tr><td>30</td><td>10</td><td>0</td><td>10</td><td>0</td><td>10</td><td>0</td><td>0</td><td>0</td></tr><tr><td>31</td><td>0</td><td>0</td><td>10</td><td>0</td><td>0</td><td>150</td><td>150</td><td>10</td></tr><tr><td>32</td><td>150</td><td>10</td><td>10</td><td>10</td><td>10</td><td>0</td><td>130</td><td>0</td></tr></tbody></table></div>
 <p>{"Day 31 starts with no backlog; its 10 unfulfilled units become closing backlog. After the receipt, physical sellable stock is 150 but only 140 is available after reserving those 10 units. On day 32 we fulfill the 10 back orders first, then the day’s 10 new units: 150 − 10 − 10 = 130. Closing backlog is zero."}</p>
 <p>{"Recording an unfulfilled order does not remove physical units. Fulfillment does. Keep lost demand and back orders separate, and state which one your plan assumes. Do not subtract day 31’s unfulfilled demand from physical stock as though goods were shipped."}</p>
+<TimelineCalculator />
 <h2>{"Download the complete daily tables"}</h2>
 <p><a href="/downloads/inbound-inventory-worked-examples.csv" download>Download the worked-example CSV — four scenarios, days 1–45</a></p>
 <p>{"Open the CSV in a spreadsheet to inspect all 180 rows. Column names include units, opening and closing backlog, receipts and fulfilled demand. This is a static calculation record, not a live calculator: changing one cell will not recalculate the rest. All data is synthetic."}</p>
@@ -37,5 +41,6 @@ export default function InboundGuide(){return <main className={styles.page}><art
 <h2>{"Continue your planning"}</h2>
 <ul><li><Link href="/blog/calculate-reorder-window/">Calculate the basic reorder window and understand its limits</Link></li><li><Link href="/blog/supplier-lead-time-checklist/">Confirm supplier, carrier and warehouse milestones</Link></li></ul>
 <p>{"This article is an educational planning worksheet. It does not claim that the China Supply Radar extension or Shopify app automatically performs these inbound-order calculations. Actual delivery and demand can differ from the assumptions."}</p>
+<GuideNextStep source="inbound-guide" />
 <p className={styles.byline}>By China Supply Radar · Synthetic examples independently recalculated · Source checked October 19, 2026.</p>
 </article></main>;}
