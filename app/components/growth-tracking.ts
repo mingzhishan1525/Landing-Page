@@ -20,6 +20,7 @@ type TrackGrowthEventOptions = {
   metadata?: Record<string, unknown>;
 };
 
+const INTERNAL_TRAFFIC_KEY = "csr.growth.internal.v1";
 const VISITOR_ID_KEY = "csr.growth.visitor_id.v1";
 const SESSION_ID_KEY = "csr.growth.session_id.v1";
 const growthApiUrl = (
@@ -37,6 +38,15 @@ export function trackGrowthEvent(
 
   try {
     const currentUrl = new URL(window.location.href);
+    // Explicit, per-browser QA opt-out. Control URLs themselves never emit events.
+    const internalControl = currentUrl.searchParams.get("csr_internal");
+    if (internalControl === "1" || internalControl === "0") {
+      window.localStorage.setItem(INTERNAL_TRAFFIC_KEY, internalControl);
+      return;
+    }
+    if (window.localStorage.getItem(INTERNAL_TRAFFIC_KEY) === "1") {
+      return;
+    }
     const visitorId = getOrCreateStorageValue(window.localStorage, VISITOR_ID_KEY);
     const sessionId = getOrCreateStorageValue(window.sessionStorage, SESSION_ID_KEY);
     const utmSource = currentUrl.searchParams.get("utm_source");
