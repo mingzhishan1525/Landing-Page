@@ -4,7 +4,7 @@ export const metadata = {
   alternates: { canonical: "/newsletter/" },
   title: "Newsletter | China Supply Radar",
   description:
-    "Subscribe to China Supply Radar updates on China holiday risk, supplier reliability, and inventory planning.",
+    "Contact China Supply Radar about product updates and inventory planning resources.",
 };
 
 export default function NewsletterPage() {
@@ -15,11 +15,11 @@ export default function NewsletterPage() {
           Newsletter
         </p>
         <h1 className="mt-4 text-4xl font-bold">
-          This Week in China Supply Risk
+          Ask about China Supply Radar updates
         </h1>
         <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300">
-          Get China holiday alerts, supplier risk notes, shipping risk
-          intelligence, and product updates for ecommerce sellers.
+          Contact us about product updates, China holiday planning guides and
+          reorder examples for ecommerce sellers.
         </p>
         <NewsletterSignup source="newsletter_page" />
       </section>

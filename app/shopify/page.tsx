@@ -6,25 +6,25 @@ export const metadata = {
   alternates: { canonical: "/shopify/" },
   title: "Shopify App | China Supply Radar",
   description:
-    "Prevent stockouts before Chinese factory delays happen with inventory risk, reorder recommendations, and China holiday alerts for Shopify.",
+    "Review inventory, recent sales and stock coverage to prioritize replenishment planning for your Shopify store.",
 };
 
 const features = [
   {
     title: "Stockout Risk",
-    body: "Identify products that may run out before supplier production and shipping can catch up.",
+    body: "Review at-risk SKUs using inventory levels and recent sales estimates.",
   },
   {
-    title: "Reorder Recommendation",
-    body: "Use sales velocity, inventory cover, and supplier lead time to prioritize reorder action.",
+    title: "Replenishment Priorities",
+    body: "Use estimated sales velocity and stock cover to decide which products need attention.",
   },
   {
-    title: "China Holiday Alert",
-    body: "Add Chinese New Year, National Day, and other shutdown windows to inventory planning.",
+    title: "Recent Sales",
+    body: "Use recent order data to estimate how quickly products are selling.",
   },
   {
-    title: "Supplier Risk Notes",
-    body: "Keep supplier reliability and lead time context close to reorder decisions.",
+    title: "Inventory Overview",
+    body: "Review product and inventory data alongside sales estimates.",
   },
 ];
 
@@ -42,7 +42,7 @@ const faqs = [
   {
     question: "Does it help with China holidays?",
     answer:
-      "Yes. The app adds holiday shutdown context to stockout and reorder planning.",
+      "Use the standalone Chrome extension and our free website tools for China holiday planning. Confirm actual factory schedules with your supplier.",
   },
 ];
 
@@ -69,12 +69,12 @@ export default function ShopifyPage() {
             Shopify App
           </p>
           <h1 className="mt-4 text-4xl font-bold leading-tight text-slate-950 dark:text-white sm:text-5xl">
-            Prevent Stockouts Before Chinese Factory Delays Happen
+            See which SKUs need replenishment attention
           </h1>
           <p className="mt-5 text-lg leading-8 text-slate-600 dark:text-slate-300">
-            China Supply Radar helps Shopify sellers predict inventory risk,
-            reorder earlier, and avoid supply chain disruption during Chinese
-            holidays.
+            Review your products, inventory and recent orders to estimate daily
+            sales and remaining stock cover. Use the results to plan your next
+            replenishment conversation.
           </p>
           <TrackedLink
             href={withUtm(growthLinks.shopifyInstallUrl, "shopify")}
@@ -82,7 +82,7 @@ export default function ShopifyPage() {
             eventSource="shopify"
             className="mt-7 inline-flex min-h-12 items-center justify-center rounded-md bg-teal-600 px-6 py-3 text-base font-semibold text-white hover:bg-teal-700"
           >
-            Install Shopify App
+            View Shopify App · $29/month
           </TrackedLink>
         </div>
 
@@ -99,9 +99,9 @@ export default function ShopifyPage() {
             Solution
           </h2>
           <p className="mt-3 leading-7 text-slate-600 dark:text-slate-300">
-            Inventory Protection helps merchants review stockout risk, reorder
-            timing, supplier context, and China holiday impact before it is too
-            late.
+            China Supply Radar highlights at-risk SKUs using inventory and recent
+            sales. Estimates depend on store data and changing demand; confirm
+            lead times and existing purchase orders before deciding.
           </p>
         </div>
       </section>

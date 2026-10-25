@@ -8,7 +8,7 @@ import { growthLinks, withUtm } from "../lib/growth-links";
 export const metadata: Metadata = {
   title: "China Supply Radar | Inventory Risk & Supply Chain Planning for Shopify",
   description:
-    "Inventory risk dashboard, sales velocity, reorder queue, stockout alerts, and China holiday impact planning for Shopify merchants.",
+    "Review inventory risk and recent sales with Shopify, and use standalone Chrome tools for China holiday and reorder planning.",
 };
 
 const chromeStoreStatusText = isChromeStorePublished
@@ -41,8 +41,8 @@ const features = [
   },
   {
     eyebrow: "Shopify App",
-    title: "Upcoming Stockout Alerts",
-    body: "Identify products likely to stock out before production and shipping can catch up.",
+    title: "Stock Coverage Estimates",
+    body: "Estimate remaining stock coverage using current inventory and recent sales.",
   },
   {
     eyebrow: "China sourcing",
@@ -105,7 +105,7 @@ const faqs = [
   },
   {
     question: "Can I track multiple suppliers?",
-    answer: "Local supplier notes are available free. Advanced supplier reliability and unlimited SKU monitoring require Pro.",
+    answer: "Keep local supplier notes in the free Chrome extension. For current Shopify Pro capabilities and plan terms, review Pricing and the Shopify App Store.",
   },
   {
     question: "Does it collect supplier information?",
@@ -116,8 +116,8 @@ const faqs = [
 
 const waitlistItems = [
   "New China holiday alerts",
-  "Supplier reliability improvements",
-  "Shipping risk intelligence",
+  "Supplier planning guides",
+  "Reorder planning examples",
   "Product updates",
 ];
 
@@ -527,7 +527,7 @@ export default function Home() {
           </div>
           <div>
             <p className="text-lg leading-8 text-slate-600 dark:text-slate-300">
-              Get notified about:
+              Ask about updates on:
             </p>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               {waitlistItems.map((item) => (
