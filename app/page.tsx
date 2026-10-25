@@ -310,6 +310,9 @@ export default function Home() {
           <p className="mt-3 text-sm font-semibold text-slate-600 dark:text-slate-300">
             {chromeStoreStatusText}. Free features need no Shopify account. Actual factory schedules must be confirmed with your supplier.
           </p>
+          <p className="mt-4 text-sm leading-6 text-slate-600 dark:text-slate-300">
+            Unsure where to start? <TrackedLink href="/reorder-review/" buttonName="reorder_review_start" eventSource="homepage" className="font-semibold text-teal-700 underline underline-offset-4 dark:text-teal-300">Request a free one-SKU reorder review</TrackedLink>. No installation required.
+          </p>
           <div className="mt-5 grid gap-x-6 gap-y-2 sm:grid-cols-3">
             {trustPoints.map((point) => (
               <div
