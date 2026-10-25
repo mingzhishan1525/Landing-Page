@@ -13,25 +13,23 @@ export const metadata = {
 
 const plans = [
   {
-    name: "Free",
+    name: "Free Chrome extension",
     price: "$0",
     description: "Free Chrome Extension. No Shopify account required.",
     features: [
-      "Overall supply risk score",
-      "China holiday impact",
+      "China holiday planning aids",
+      "Local supplier notes and message templates",
       "Track 1 SKU",
     ],
   },
   {
-    name: "Pro",
+    name: "Shopify Pro",
     price: "$29/month",
-    description: "Requires a Shopify subscription. Connect the extension using a code from the Shopify App.",
+    description: "Inventory risk planning using your Shopify products, inventory and recent orders.",
     features: [
-      "Unlimited SKU monitoring",
-      "Supplier reliability intelligence",
-      "Inventory risk prediction",
-      "Reorder forecasting",
-      "Weekly risk alerts",
+      "Product, inventory and recent order data",
+      "Estimated daily sales and remaining stock cover",
+      "At-risk SKU prioritization",
     ],
   },
 ];
@@ -61,11 +59,11 @@ export default function PricingPage() {
           Pricing
         </p>
         <h1 className="mt-4 text-4xl font-bold leading-tight text-slate-950 dark:text-white sm:text-5xl">
-          Simple plans for inventory risk planning.
+          Choose the tools that fit your workflow.
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
-          China Supply Radar helps Shopify merchants monitor inventory health,
-          sales velocity, reorder timing, and China supply chain risk.
+          Start with the standalone Chrome extension, or review inventory risk
+          using your Shopify store data with Pro.
         </p>
 
         <div className="mt-10 grid gap-5 md:grid-cols-2">
@@ -95,6 +93,13 @@ export default function PricingPage() {
           ))}
         </div>
 
+        <p className="mt-6 max-w-3xl text-sm leading-7 text-slate-600 dark:text-slate-300">
+          The free tools belong to the Chrome extension, not a Shopify free plan.
+          Shopify Pro is listed at $29/month USD. Review current billing terms in
+          Shopify before approving a subscription. Estimates depend on your data
+          and changing sales conditions; confirm actual lead times with your supplier.
+        </p>
+
         <InstallCta
           label="Add to Chrome — Free"
           className="mt-8 mr-4 inline-flex min-h-12 items-center justify-center rounded-md border border-teal-600 px-6 py-3 text-base font-semibold text-teal-700 dark:text-teal-300"
@@ -106,7 +111,7 @@ export default function PricingPage() {
           commercialEvent="UPGRADE_CLICK"
           className="mt-8 inline-flex min-h-12 items-center justify-center rounded-md bg-teal-600 px-6 py-3 text-base font-semibold text-white hover:bg-teal-700"
         >
-          Start Pro · $29/month
+          View Pro on Shopify · $29/month
         </TrackedLink>
       </section>
     </main>
