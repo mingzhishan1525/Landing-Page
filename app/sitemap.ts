@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tools/reorder-calculator",
     "/tools/stockout-risk-calculator",
     "/blog",
+    "/blog/choose-daily-sales-reorder",
     "/blog/calculate-reorder-window",
     "/blog/shopify-available-stock-reorder",
     "/blog/supplier-lead-time-checklist",
