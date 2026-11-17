@@ -2,10 +2,10 @@ import Link from "next/link";
 import GuideNextStep from "../../components/GuideNextStep";
 import styles from "../calculate-reorder-window/article.module.css";
 export const metadata = {
- title: "Supplier lead time checklist | China Supply Radar",
- description: "Ask your supplier these eight questions before calculating a reorder date. Includes a copyable message and a worked inventory example.",
+ title: "Supplier Lead Time Checklist: 8 Questions Before Ordering",
+ description: "Use this supplier lead-time checklist to confirm production start, goods-ready and delivery dates. Includes eight questions, a message template and a worked example.",
  alternates: { canonical: "/blog/supplier-lead-time-checklist/" },
- openGraph: { title: "Supplier lead time checklist: what to confirm before reordering", description: "Eight questions, a supplier message template, and a worked reorder example.", url: "/blog/supplier-lead-time-checklist/", type: "article" },
+ openGraph: { title: "Supplier Lead Time Checklist: 8 Questions Before Ordering", description: "Confirm production start, goods-ready and delivery dates before you calculate the next reorder date.", url: "/blog/supplier-lead-time-checklist/", type: "article" },
 };
 export default function SupplierLeadTimeGuide() { return (
 <main className={styles.page}><article className={styles.article}>
