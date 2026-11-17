@@ -40,5 +40,8 @@ export default function ReorderGuide() { return (
 <p><a href="https://x.com/musanmu288388/status/2109135262907609451">View the demonstration on X</a></p>
 <h2>Already have an order in transit?</h2><p>Use the <Link href="/blog/inbound-inventory-reorder-timeline/">inbound inventory timeline and downloadable daily tables</Link> to check whether current stock lasts until the receipt becomes usable.</p>
 <p>Not sure which inventory number to use? Read the <Link href="/blog/shopify-available-stock-reorder/">Shopify inventory input guide</Link> before calculating coverage.</p>
+<h2>When your inputs change</h2>
+<p>If your supplier changes a production or delivery date, <Link href="/blog/recalculate-reorder-after-delay/">recalculate your reorder window from today’s stock</Link>. Separate an order you have not placed from a purchase order already in progress.</p>
+<p>Managing several products? <Link href="/blog/prioritize-sku-reorders/">Compare reorder timing across SKUs</Link> to decide which assumptions to investigate first. Timing priority alone does not determine purchase quantities or budget allocation.</p>
 <GuideNextStep source="calculate-reorder-window" />
 </article></main>); }
