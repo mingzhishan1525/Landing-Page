@@ -1,0 +1,30 @@
+import Link from "next/link";
+import GuideNextStep from "../../components/GuideNextStep";
+import styles from "../calculate-reorder-window/article.module.css";
+export const metadata = {title:"Which SKU should you reorder first? | China Supply Radar",description:"Compare stock cover, replenishment time and buffers across three SKUs. A worked example shows why the fewest units need not mean the earliest reorder.",alternates:{canonical:"/blog/prioritize-sku-reorders/"}};
+export default function Guide(){return <main className={styles.page}><article className={styles.article}><nav><Link href="/">China Supply Radar</Link><Link href="/blog/">All guides</Link></nav><p className={styles.eyebrow}>INVENTORY PLANNING GUIDE</p><h1>{"Which SKU should you review for reorder first?"}</h1>
+<p>{"The SKU with the fewest units is not necessarily the one that needs attention first. Compare how long each SKU can cover demand with how long its replacement would take. Then check incoming orders and the consequences of a gap before deciding what to buy."}</p>
+<p>{"This is a manual review method, not an automated purchasing rule. It ranks timing questions to investigate; it does not allocate a purchasing budget or calculate order quantities."}</p>
+<h2>{"Put every SKU on the same footing"}</h2>
+<p>{"Take a stock snapshot at the same time. For each SKU, record units available to fulfil new demand, a representative daily demand assumption, the full replenishment time for a new order, and a separate contingency buffer. Use the same units and calendar-day convention across the calculation. Exclude units unavailable for new demand, such as reserved or damaged stock. Use a consistent definition and avoid subtracting reservations twice."}</p>
+<p>{"For an order not yet placed, a simplified screen is:"}</p>
+<p>{"Coverage days = available units ÷ daily demand"}</p>
+<p>{"Reorder window = coverage days − replenishment days − buffer days"}</p>
+<p>{"A smaller window suggests an earlier timing review. A negative window means the assumed reorder point has passed; it does not establish that the warehouse is empty. When daily demand is zero or unknown, leave the calculation unresolved rather than dividing by zero or inventing a rate."}</p>
+<p>{"For an existing purchase order, assess its remaining milestones on a dated inventory timeline. Do not substitute its remaining transit time for the full lead time of a separate new order."}</p>
+<h2>{"A three-SKU example"}</h2>
+<p>{"These are synthetic planning figures, not customer results. Assume steady demand, no incoming inventory, no backorders, and all listed stock available for sale. Replenishment durations cover the full non-overlapping interval from ordering to usable stock. The buffer is additional time, not already included in those durations."}</p>
+<div className={styles.tableWrap}><table><thead><tr><th scope="col">{"SKU"}</th><th scope="col">{"Available units"}</th><th scope="col">{"Units/day"}</th><th scope="col">{"Coverage"}</th><th scope="col">{"Replenishment"}</th><th scope="col">{"Buffer"}</th><th scope="col">{"Window"}</th></tr></thead><tbody><tr><td>{"A"}</td><td>{"300"}</td><td>{"10"}</td><td>{"30 days"}</td><td>{"21 days"}</td><td>{"7 days"}</td><td>{"2 days"}</td></tr><tr><td>{"B"}</td><td>{"120"}</td><td>{"4"}</td><td>{"30 days"}</td><td>{"35 days"}</td><td>{"7 days"}</td><td>{"−12 days"}</td></tr><tr><td>{"C"}</td><td>{"80"}</td><td>{"8"}</td><td>{"10 days"}</td><td>{"3 days"}</td><td>{"2 days"}</td><td>{"5 days"}</td></tr></tbody></table></div>
+<p>{"SKU C has the fewest units and the shortest coverage. Yet SKU B has the earliest planning problem because replacing it takes longer than its current cover. Under these assumptions, investigate B, then A, then C."}</p>
+<p>{"That order is a queue for investigation. It is not proof that spending on B delivers the best business outcome. A product being discontinued may need a different response from an essential item with confirmed customer commitments."}</p>
+<h2>{"Check what the simple ranking leaves out"}</h2>
+<p>{"Before acting on B, check whether an existing purchase order already addresses the gap. Record the expected date stock becomes available for fulfilment, the usable quantity, and a delayed-arrival scenario. Arrival at a port, warehouse receipt and sellable availability may be different milestones. Do not add all incoming units to today's stock. Use a dated stock timeline when arrivals matter."}</p>
+<p>{"Next, test the demand assumption. A recent promotion or a period with no stock can make recorded sales a poor guide to future demand. Keep the original assumption visible and compare a plausible alternative. Correct the input and recalculate all affected SKUs rather than preserving an outdated rank."}</p>
+<p>{"Finally, write the action beside the risk: confirm a supplier milestone, check a warehouse receipt, investigate a demand spike, or review an order quantity separately. Record who owns the action and when the next update is due. Unknown delivery timing is a question to resolve, not zero days of lead time."}</p>
+<h2>{"Keep the decision traceable"}</h2>
+<p>{"A practical review sheet needs the snapshot date, SKU, available units, demand assumption, replenishment duration, buffer, incoming-order milestones, calculated window and next action. Recalculate after a material stock, demand or delivery change."}</p>
+<p>{"Start with the most urgent unresolved timing issue. Confirm the facts before placing an order, and choose the quantity using a separate purchasing decision."}</p>
+<h2>{"Further reading"}</h2>
+<p><a href="https://chinasupplyradar.com/blog/calculate-reorder-window/">{"Calculate a reorder window"}</a></p>
+<p><a href="https://chinasupplyradar.com/blog/inbound-inventory-reorder-timeline/">{"Place inbound inventory on a timeline"}</a></p>
+<p><a href="https://chinasupplyradar.com/blog/choose-daily-sales-reorder/">{"Choose a daily sales assumption"}</a></p><GuideNextStep source="prioritize-sku-reorders" /></article></main>;}
