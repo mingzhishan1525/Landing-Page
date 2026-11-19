@@ -122,8 +122,9 @@ export default function StockoutRiskCalculator() {
         </h2>
         <div className="mt-5 grid gap-3 sm:grid-cols-2">
           <div className="rounded-md bg-white p-4 dark:bg-slate-950">
-            <p className="text-xs text-slate-500">Revenue At Risk</p>
+            <p className="text-xs text-slate-500">Illustrative Inventory Value</p>
             <p className="mt-2 text-xl font-bold">${result.revenueAtRisk}</p>
+            <p className="mt-2 text-xs text-slate-500">Assumes $24 per unit; not forecast lost revenue.</p>
           </div>
           <div className="rounded-md bg-white p-4 dark:bg-slate-950">
             <p className="text-xs text-slate-500">Suggested Reorder Window</p>
